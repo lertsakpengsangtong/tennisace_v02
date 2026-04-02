@@ -16,10 +16,13 @@
       -webkit-font-smoothing: antialiased;
     }
     #root { height: 100%; width: 100%; max-width: 100vw; overflow: hidden; display: flex; justify-content: center; }
+    #root > div { width: 100%; max-width: 100vw; overflow: hidden; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-thumb { background: #A5D6A7; border-radius: 3px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    input, select, button { font-family: inherit; max-width: 100%; }
+    input, select, button, textarea { font-family: inherit; max-width: 100%; box-sizing: border-box; }
+    img, svg, video, canvas { max-width: 100%; }
+    p, span, h1, h2, h3, h4, h5, h6, label, a { overflow-wrap: break-word; word-wrap: break-word; }
   </style>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -538,6 +541,9 @@ const T = {
     phoneOptional: "Phone (optional)",
     profilePhoto: "Profile Photo",
     uploadPhoto: "Upload Photo",
+    setupTournament: "Set Up Tournament",
+    startCoachAssessment: "Start Coach Assessment",
+    startPlayerAssessment: "Start Player Assessment",
     seeResults: "See Results",
     nextQuestion: "Next Question",
     yourPlayerRating: "Your Player Rating",
@@ -882,7 +888,41 @@ const T = {
     formatTab: "Format",
     tickets: "Tickets",
     promote: "Promote",
-    publish: "Publish"
+    publish: "Publish",
+    startJourneyFree: "Start your tennis journey",
+    playMoreCoachOthers: "Play more, pay less, coach others",
+    organizeAtScale: "Organize and lead at scale",
+    fullVenueManagement: "Full venue management suite",
+    bookCourtDesc: "Find and reserve courts near you",
+    findMatchDesc: "Connect with players at your level",
+    playerAssessmentDesc: "Discover your NTRP / UTR / WTN rating",
+    browseClassesDesc: "Join classes led by certified coaches",
+    viewStatsDesc: "Track your match history and progress",
+    advancedStats: "Advanced Stats",
+    viewStats: "View Stats",
+    bookACoach: "Book a Coach",
+    manageCourts: "Manage Courts",
+    zeroCommissionDesc: "0% commission on all bookings",
+    bookCoachDesc: "1-on-1 sessions with certified coaches",
+    createClassPremiumDesc: "Teach up to 2 classes/month as a coach",
+    assessmentPremiumDesc: "Full analytics + H2H records",
+    coachAssessmentDesc: "Get your coaching certification level",
+    advancedStatsDesc: "Serve deep-dive, opponent scouting",
+    createTournamentProDesc: "Unlimited tournaments, any size",
+    createLeagueDesc: "Season-long competition tracking",
+    createEventDesc: "Clinics, socials, mixers — unlimited",
+    createClassProDesc: "Unlimited classes as team coach",
+    organizerAssessmentDesc: "OQS 1.0–5.0 certification score",
+    playerEngagementDesc: "Engagement metrics + CSV export",
+    manageCourtsDesc: "Court heatmap + availability dashboard",
+    createClassClubDesc: "Unlimited classes across your venue",
+    createTournamentClubDesc: "Host events at your venue",
+    clubAssessmentDesc: "CQS 1.0–5.0 + Tennis AU tier",
+    memberCRMDesc: "Track members, churn prediction",
+    revenueReportsDesc: "Income analytics + forecasting",
+    newBadge: "NEW",
+    grandSlamThemes: "Grand Slam themes",
+    planLabel: "Plan"
   },
   th: {
     locale: "th",
@@ -1245,6 +1285,26 @@ const T = {
     feature: "ฟีเจอร์",
     upgrade: "อัปเกรด",
     improvement: "พัฒนาขึ้น",
+    roleManagement: "จัดการบทบาท",
+    howUseApp: "คุณจะใช้ TennisAce อย่างไร?",
+    selectRole: "เลือกบทบาทของคุณ คุณสามารถเปลี่ยนได้ภายหลังในการตั้งค่า",
+    rolePlayer: "ผู้เล่น",
+    rolePlayerDesc: "หาคู่แข่ง จองสนาม ติดตามสถิติ และพัฒนาเกมของคุณ",
+    roleCoach: "โค้ช",
+    roleCoachDesc: "เปิดสอนเทนนิส จัดการนักเรียน ตั้งเวลาว่างและค่าสอน",
+    roleOrganizer: "ผู้จัดทัวร์นาเมนต์",
+    roleOrganizerDesc: "สร้างและโปรโมตทัวร์นาเมนต์ ขายบัตร จัดสายและตาราง",
+    roleBoth: "ผู้เล่น + โค้ช",
+    roleBothDesc: "เล่นแข่งขันและสอนผู้เล่นคนอื่นจากบัญชีเดียว",
+    btnContinue: "ดำเนินการต่อ",
+    accountBasics: "ข้อมูลพื้นฐาน",
+    fullName: "ชื่อ-นามสกุล",
+    phoneOptional: "โทรศัพท์ (ไม่บังคับ)",
+    profilePhoto: "รูปโปรไฟล์",
+    uploadPhoto: "อัปโหลดรูป",
+    setupTournament: "ตั้งค่าทัวร์นาเมนต์",
+    startCoachAssessment: "เริ่มประเมินโค้ช",
+    startPlayerAssessment: "เริ่มประเมินผู้เล่น",
     headToHead: "สถิติเจอกัน",
     winBySurface: "อัตราชนะตามพื้นสนาม",
     rallyLengthWin: "อัตราชนะตามแรลลี่",
@@ -1495,7 +1555,41 @@ const T = {
     formatTab: "รูปแบบ",
     tickets: "ตั๋ว",
     promote: "โปรโมท",
-    publish: "เผยแพร่"
+    publish: "เผยแพร่",
+    startJourneyFree: "เริ่มต้นเส้นทางเทนนิสของคุณ",
+    playMoreCoachOthers: "เล่นเพิ่ม จ่ายน้อย สอนได้",
+    organizeAtScale: "จัดการและนำทีมอย่างมืออาชีพ",
+    fullVenueManagement: "ระบบจัดการสนามครบวงจร",
+    bookCourtDesc: "ค้นหาและจองสนามใกล้คุณ",
+    findMatchDesc: "เชื่อมต่อกับผู้เล่นระดับเดียวกัน",
+    playerAssessmentDesc: "ค้นพบเรตติ้ง NTRP / UTR / WTN ของคุณ",
+    browseClassesDesc: "เข้าร่วมคลาสที่สอนโดยโค้ชมืออาชีพ",
+    viewStatsDesc: "ติดตามประวัติแมตช์และความก้าวหน้า",
+    advancedStats: "สถิติขั้นสูง",
+    viewStats: "ดูสถิติ",
+    bookACoach: "จองโค้ช",
+    manageCourts: "จัดการสนาม",
+    zeroCommissionDesc: "ค่าคอมมิชชั่น 0% ทุกการจอง",
+    bookCoachDesc: "เรียนส่วนตัวกับโค้ชมืออาชีพ",
+    createClassPremiumDesc: "สอนได้สูงสุด 2 คลาส/เดือน",
+    assessmentPremiumDesc: "วิเคราะห์เต็มรูปแบบ + สถิติ H2H",
+    coachAssessmentDesc: "รับระดับใบรับรองการสอน",
+    advancedStatsDesc: "วิเคราะห์เซิร์ฟ, สำรวจคู่แข่ง",
+    createTournamentProDesc: "จัดทัวร์นาเมนต์ไม่จำกัด ทุกขนาด",
+    createLeagueDesc: "ติดตามการแข่งขันตลอดฤดูกาล",
+    createEventDesc: "คลินิก, งานสังสรรค์ — ไม่จำกัด",
+    createClassProDesc: "สอนคลาสไม่จำกัดในฐานะโค้ชทีม",
+    organizerAssessmentDesc: "คะแนนใบรับรอง OQS 1.0–5.0",
+    playerEngagementDesc: "ตัวชี้วัดการมีส่วนร่วม + ส่งออก CSV",
+    manageCourtsDesc: "แผนที่สนาม + แดชบอร์ดการจอง",
+    createClassClubDesc: "สอนคลาสไม่จำกัดทั่วสนามของคุณ",
+    createTournamentClubDesc: "จัดอีเวนต์ที่สนามของคุณ",
+    clubAssessmentDesc: "CQS 1.0–5.0 + ระดับ Tennis AU",
+    memberCRMDesc: "ติดตามสมาชิก, พยากรณ์การลาออก",
+    revenueReportsDesc: "วิเคราะห์รายได้ + พยากรณ์",
+    newBadge: "ใหม่",
+    grandSlamThemes: "ธีม Grand Slam",
+    planLabel: "แพลน"
   },
   zh: {
     locale: "zh-CN",
@@ -1858,6 +1952,26 @@ const T = {
     feature: "功能",
     upgrade: "升级",
     improvement: "提升",
+    roleManagement: "角色管理",
+    howUseApp: "你将如何使用 TennisAce？",
+    selectRole: "选择你的角色。你可以稍后在设置中更改。",
+    rolePlayer: "球员",
+    rolePlayerDesc: "寻找比赛、预订球场、追踪统计数据并提升球技",
+    roleCoach: "教练",
+    roleCoachDesc: "提供教学课程、管理学员、设置时间和费率",
+    roleOrganizer: "赛事组织者",
+    roleOrganizerDesc: "创建和推广锦标赛、售票、管理签表和赛程",
+    roleBoth: "球员 + 教练",
+    roleBothDesc: "在一个账户中竞技比赛并指导其他球员",
+    btnContinue: "继续",
+    accountBasics: "基本信息",
+    fullName: "姓名",
+    phoneOptional: "电话（选填）",
+    profilePhoto: "头像",
+    uploadPhoto: "上传照片",
+    setupTournament: "设置锦标赛",
+    startCoachAssessment: "开始教练评估",
+    startPlayerAssessment: "开始球员评估",
     headToHead: "交手记录",
     winBySurface: "按场地类型胜率",
     rallyLengthWin: "回合长度胜率",
@@ -2108,7 +2222,41 @@ const T = {
     formatTab: "赛制",
     tickets: "门票",
     promote: "推广",
-    publish: "发布"
+    publish: "发布",
+    startJourneyFree: "开始你的网球之旅",
+    playMoreCoachOthers: "多打球，少花钱，还能教球",
+    organizeAtScale: "大规模组织和领导",
+    fullVenueManagement: "全面场馆管理套件",
+    bookCourtDesc: "查找并预订附近的球场",
+    findMatchDesc: "与同水平球员配对",
+    playerAssessmentDesc: "了解你的 NTRP / UTR / WTN 评分",
+    browseClassesDesc: "参加认证教练带领的课程",
+    viewStatsDesc: "追踪比赛历史和进步",
+    advancedStats: "高级统计",
+    viewStats: "查看统计",
+    bookACoach: "预约教练",
+    manageCourts: "管理球场",
+    zeroCommissionDesc: "所有预订零佣金",
+    bookCoachDesc: "与认证教练一对一训练",
+    createClassPremiumDesc: "每月最多教授2节课",
+    assessmentPremiumDesc: "完整分析 + 对战记录",
+    coachAssessmentDesc: "获取教练认证等级",
+    advancedStatsDesc: "发球深度分析，对手侦察",
+    createTournamentProDesc: "无限锦标赛，任何规模",
+    createLeagueDesc: "整季赛事追踪",
+    createEventDesc: "诊所、社交活动 — 无限制",
+    createClassProDesc: "作为团队教练无限授课",
+    organizerAssessmentDesc: "OQS 1.0–5.0 认证评分",
+    playerEngagementDesc: "参与度指标 + CSV导出",
+    manageCourtsDesc: "球场热力图 + 可用性仪表板",
+    createClassClubDesc: "在场馆内无限授课",
+    createTournamentClubDesc: "在场馆举办赛事",
+    clubAssessmentDesc: "CQS 1.0–5.0 + Tennis AU 等级",
+    memberCRMDesc: "追踪会员，流失预测",
+    revenueReportsDesc: "收入分析 + 预测",
+    newBadge: "新",
+    grandSlamThemes: "大满贯主题",
+    planLabel: "计划"
   },
   ja: {
     locale: "ja",
@@ -2471,6 +2619,26 @@ const T = {
     feature: "機能",
     upgrade: "アップグレード",
     improvement: "向上",
+    roleManagement: "ロール管理",
+    howUseApp: "TennisAceをどのように使いますか？",
+    selectRole: "ロールを選択してください。後から設定で変更できます。",
+    rolePlayer: "プレイヤー",
+    rolePlayerDesc: "試合を探す、コートを予約、統計を追跡してスキルアップ",
+    roleCoach: "コーチ",
+    roleCoachDesc: "レッスンの提供、生徒管理、空き時間と料金の設定",
+    roleOrganizer: "大会オーガナイザー",
+    roleOrganizerDesc: "大会の作成・宣伝、チケット販売、ドロー・ブラケット管理",
+    roleBoth: "プレイヤー + コーチ",
+    roleBothDesc: "1つのアカウントで競技プレーとコーチングの両方",
+    btnContinue: "続ける",
+    accountBasics: "基本情報",
+    fullName: "氏名",
+    phoneOptional: "電話番号（任意）",
+    profilePhoto: "プロフィール写真",
+    uploadPhoto: "写真をアップロード",
+    setupTournament: "大会をセットアップ",
+    startCoachAssessment: "コーチ評価を開始",
+    startPlayerAssessment: "プレイヤー評価を開始",
     headToHead: "対戦成績",
     winBySurface: "サーフェス別勝率",
     rallyLengthWin: "ラリー長別勝率",
@@ -2721,7 +2889,41 @@ const T = {
     formatTab: "フォーマット",
     tickets: "チケット",
     promote: "プロモーション",
-    publish: "公開"
+    publish: "公開",
+    startJourneyFree: "テニスの旅を始めよう",
+    playMoreCoachOthers: "もっとプレー、節約、コーチも",
+    organizeAtScale: "大規模に組織・リード",
+    fullVenueManagement: "フル施設管理スイート",
+    bookCourtDesc: "近くのコートを検索・予約",
+    findMatchDesc: "同レベルのプレイヤーと対戦",
+    playerAssessmentDesc: "NTRP / UTR / WTN レーティングを確認",
+    browseClassesDesc: "認定コーチのクラスに参加",
+    viewStatsDesc: "試合履歴と進捗を追跡",
+    advancedStats: "詳細統計",
+    viewStats: "統計を見る",
+    bookACoach: "コーチを予約",
+    manageCourts: "コート管理",
+    zeroCommissionDesc: "全予約手数料0%",
+    bookCoachDesc: "認定コーチとマンツーマンレッスン",
+    createClassPremiumDesc: "月2クラスまで指導可能",
+    assessmentPremiumDesc: "フル分析 + 対戦成績",
+    coachAssessmentDesc: "コーチ認定レベルを取得",
+    advancedStatsDesc: "サーブ分析、対戦相手スカウト",
+    createTournamentProDesc: "無制限のトーナメント、全規模",
+    createLeagueDesc: "シーズン通しの大会トラッキング",
+    createEventDesc: "クリニック、交流会 — 無制限",
+    createClassProDesc: "チームコーチとして無制限にクラス開催",
+    organizerAssessmentDesc: "OQS 1.0–5.0 認定スコア",
+    playerEngagementDesc: "エンゲージメント指標 + CSV出力",
+    manageCourtsDesc: "コートヒートマップ + 空き状況ダッシュボード",
+    createClassClubDesc: "施設全体で無制限にクラス開催",
+    createTournamentClubDesc: "施設でイベントを開催",
+    clubAssessmentDesc: "CQS 1.0–5.0 + Tennis AU ティア",
+    memberCRMDesc: "会員追跡、離脱予測",
+    revenueReportsDesc: "収益分析 + 予測",
+    newBadge: "新規",
+    grandSlamThemes: "グランドスラムテーマ",
+    planLabel: "プラン"
   },
   fr: {
     locale: "fr",
@@ -3084,6 +3286,26 @@ const T = {
     feature: "Fonctionnalité",
     upgrade: "Mettre à niveau",
     improvement: "progression",
+    roleManagement: "Gestion des rôles",
+    howUseApp: "Comment utiliserez-vous TennisAce ?",
+    selectRole: "Sélectionnez votre rôle. Vous pourrez le modifier dans les Paramètres.",
+    rolePlayer: "Joueur",
+    rolePlayerDesc: "Trouvez des matchs, réservez des courts, suivez vos stats et progressez",
+    roleCoach: "Coach",
+    roleCoachDesc: "Proposez des séances, gérez vos élèves, définissez vos disponibilités et tarifs",
+    roleOrganizer: "Organisateur de tournoi",
+    roleOrganizerDesc: "Créez et promouvez des tournois, vendez des billets, gérez les tableaux",
+    roleBoth: "Joueur + Coach",
+    roleBothDesc: "Jouez en compétition ET coachez d'autres joueurs depuis un seul compte",
+    btnContinue: "Continuer",
+    accountBasics: "Informations de base",
+    fullName: "Nom complet",
+    phoneOptional: "Téléphone (facultatif)",
+    profilePhoto: "Photo de profil",
+    uploadPhoto: "Télécharger la photo",
+    setupTournament: "Configurer le tournoi",
+    startCoachAssessment: "Commencer l'évaluation coach",
+    startPlayerAssessment: "Commencer l'évaluation joueur",
     headToHead: "Face-à-face",
     winBySurface: "% victoire par surface",
     rallyLengthWin: "% victoire par longueur d'échange",
@@ -3334,7 +3556,41 @@ const T = {
     formatTab: "Format",
     tickets: "Billets",
     promote: "Promouvoir",
-    publish: "Publier"
+    publish: "Publier",
+    startJourneyFree: "Commencez votre parcours tennis",
+    playMoreCoachOthers: "Jouez plus, payez moins, coachez",
+    organizeAtScale: "Organisez et dirigez à grande échelle",
+    fullVenueManagement: "Suite complète de gestion de site",
+    bookCourtDesc: "Trouvez et réservez des courts près de vous",
+    findMatchDesc: "Connectez-vous avec des joueurs de votre niveau",
+    playerAssessmentDesc: "Découvrez votre classement NTRP / UTR / WTN",
+    browseClassesDesc: "Rejoignez des cours avec des coachs certifiés",
+    viewStatsDesc: "Suivez votre historique et vos progrès",
+    advancedStats: "Stats avancées",
+    viewStats: "Voir les stats",
+    bookACoach: "Réserver un coach",
+    manageCourts: "Gérer les courts",
+    zeroCommissionDesc: "0% de commission sur toutes les réservations",
+    bookCoachDesc: "Sessions 1-à-1 avec coachs certifiés",
+    createClassPremiumDesc: "Enseignez jusqu'à 2 cours/mois",
+    assessmentPremiumDesc: "Analyses complètes + confrontations",
+    coachAssessmentDesc: "Obtenez votre certification de coach",
+    advancedStatsDesc: "Analyse du service, repérage des adversaires",
+    createTournamentProDesc: "Tournois illimités, toute taille",
+    createLeagueDesc: "Suivi de compétition sur toute la saison",
+    createEventDesc: "Cliniques, rencontres — illimités",
+    createClassProDesc: "Cours illimités en tant que coach d'équipe",
+    organizerAssessmentDesc: "Score de certification OQS 1.0–5.0",
+    playerEngagementDesc: "Métriques d'engagement + export CSV",
+    manageCourtsDesc: "Carte thermique + tableau de disponibilité",
+    createClassClubDesc: "Cours illimités dans votre établissement",
+    createTournamentClubDesc: "Organisez des événements sur votre site",
+    clubAssessmentDesc: "CQS 1.0–5.0 + niveau Tennis AU",
+    memberCRMDesc: "Suivi des membres, prédiction d'attrition",
+    revenueReportsDesc: "Analyses de revenus + prévisions",
+    newBadge: "NOUVEAU",
+    grandSlamThemes: "Thèmes Grand Slam",
+    planLabel: "Plan"
   },
   es: {
     locale: "es",
@@ -3697,6 +3953,26 @@ const T = {
     feature: "Función",
     upgrade: "Mejorar plan",
     improvement: "mejora",
+    roleManagement: "Gestión de roles",
+    howUseApp: "¿Cómo usarás TennisAce?",
+    selectRole: "Selecciona tu rol. Puedes cambiarlo después en Configuración.",
+    rolePlayer: "Jugador",
+    rolePlayerDesc: "Encuentra partidos, reserva canchas, sigue estadísticas y mejora tu juego",
+    roleCoach: "Entrenador",
+    roleCoachDesc: "Ofrece sesiones de entrenamiento, gestiona alumnos, disponibilidad y tarifas",
+    roleOrganizer: "Organizador de torneos",
+    roleOrganizerDesc: "Crea y promociona torneos, vende entradas, gestiona cuadros y llaves",
+    roleBoth: "Jugador + Entrenador",
+    roleBothDesc: "Juega competitivamente Y entrena a otros jugadores desde una cuenta",
+    btnContinue: "Continuar",
+    accountBasics: "Datos básicos",
+    fullName: "Nombre completo",
+    phoneOptional: "Teléfono (opcional)",
+    profilePhoto: "Foto de perfil",
+    uploadPhoto: "Subir foto",
+    setupTournament: "Configurar torneo",
+    startCoachAssessment: "Iniciar evaluación de entrenador",
+    startPlayerAssessment: "Iniciar evaluación de jugador",
     headToHead: "Historial directo",
     winBySurface: "% victorias por superficie",
     rallyLengthWin: "% victorias por duración de rally",
@@ -3947,7 +4223,41 @@ const T = {
     formatTab: "Formato",
     tickets: "Entradas",
     promote: "Promocionar",
-    publish: "Publicar"
+    publish: "Publicar",
+    startJourneyFree: "Comienza tu viaje en el tenis",
+    playMoreCoachOthers: "Juega más, paga menos, entrena a otros",
+    organizeAtScale: "Organiza y lidera a gran escala",
+    fullVenueManagement: "Suite completa de gestión de sede",
+    bookCourtDesc: "Encuentra y reserva canchas cerca de ti",
+    findMatchDesc: "Conecta con jugadores de tu nivel",
+    playerAssessmentDesc: "Descubre tu clasificación NTRP / UTR / WTN",
+    browseClassesDesc: "Únete a clases con entrenadores certificados",
+    viewStatsDesc: "Rastrea tu historial y progreso",
+    advancedStats: "Estadísticas avanzadas",
+    viewStats: "Ver estadísticas",
+    bookACoach: "Reservar entrenador",
+    manageCourts: "Gestionar canchas",
+    zeroCommissionDesc: "0% de comisión en todas las reservas",
+    bookCoachDesc: "Sesiones 1 a 1 con entrenadores certificados",
+    createClassPremiumDesc: "Enseña hasta 2 clases/mes como entrenador",
+    assessmentPremiumDesc: "Análisis completo + registros H2H",
+    coachAssessmentDesc: "Obtén tu nivel de certificación de entrenador",
+    advancedStatsDesc: "Análisis de saque, exploración de rivales",
+    createTournamentProDesc: "Torneos ilimitados, cualquier tamaño",
+    createLeagueDesc: "Seguimiento de competencia por temporada",
+    createEventDesc: "Clínicas, encuentros sociales — ilimitados",
+    createClassProDesc: "Clases ilimitadas como entrenador de equipo",
+    organizerAssessmentDesc: "Puntuación de certificación OQS 1.0–5.0",
+    playerEngagementDesc: "Métricas de participación + exportar CSV",
+    manageCourtsDesc: "Mapa de canchas + panel de disponibilidad",
+    createClassClubDesc: "Clases ilimitadas en toda tu sede",
+    createTournamentClubDesc: "Organiza eventos en tu sede",
+    clubAssessmentDesc: "CQS 1.0–5.0 + nivel Tennis AU",
+    memberCRMDesc: "Seguimiento de miembros, predicción de abandono",
+    revenueReportsDesc: "Análisis de ingresos + pronósticos",
+    newBadge: "NUEVO",
+    grandSlamThemes: "Temas Grand Slam",
+    planLabel: "Plan"
   }
 };
 
@@ -6803,16 +7113,15 @@ function TennisAce() {
   }, t.name), themeKey === key && Icons.check(theme.primary, 14)))), /*#__PURE__*/React.createElement("div", {
     style: {
       flex: 1,
-      overflowY: "scroll",
+      overflowY: "auto",
       overflowX: "hidden",
-      padding: "0 16px 64px 16px",
-      WebkitOverflowScrolling: "touch"
+      padding: "0 16px 64px 16px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       width: "100%",
-      maxWidth: "100%",
-      overflow: "hidden"
+      minWidth: 0,
+      overflowX: "hidden"
     }
   }, screens[screen] || screens.home)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -7650,23 +7959,23 @@ function RoleSelectScreen({
   const roles = [{
     id: "player",
     icon: "user",
-    title: "Player",
-    desc: "Find matches, book courts, track stats & improve your game"
+    title: t.rolePlayer,
+    desc: t.rolePlayerDesc
   }, {
     id: "coach",
     icon: "award",
-    title: "Coach",
-    desc: "Offer coaching sessions, manage students, set availability & rates"
+    title: t.roleCoach,
+    desc: t.roleCoachDesc
   }, {
     id: "organizer",
     icon: "trophy",
-    title: "Tournament Organizer",
-    desc: "Create & promote tournaments, sell tickets, manage draws & brackets"
+    title: t.roleOrganizer,
+    desc: t.roleOrganizerDesc
   }, {
     id: "both",
     icon: "users",
-    title: "Player + Coach",
-    desc: "Play competitively AND coach other players from one account"
+    title: t.roleBoth,
+    desc: t.roleBothDesc
   }];
   const getProgressSteps = () => {
     if (!selectedRole) return ["Role"];
@@ -7680,7 +7989,8 @@ function RoleSelectScreen({
   if (step === 0) {
     return /*#__PURE__*/React.createElement("div", {
       style: {
-        padding: 0
+        padding: 0,
+        paddingTop: 8
       }
     }, /*#__PURE__*/React.createElement("h2", {
       style: {
@@ -7768,7 +8078,7 @@ function RoleSelectScreen({
         justifyContent: "center",
         gap: 8
       }
-    }, "Continue ", Icons.chevronRight("#fff", 18)));
+    }, t.btnContinue, " ", Icons.chevronRight("#fff", 18)));
   }
   if (step === 1) {
     return /*#__PURE__*/React.createElement("div", {
@@ -7890,7 +8200,7 @@ function RoleSelectScreen({
         justifyContent: "center",
         gap: 8
       }
-    }, selectedRole === "organizer" ? "Set Up Tournament" : selectedRole === "coach" ? "Start Coach Assessment" : "Start Player Assessment", Icons.chevronRight("#fff", 18)));
+    }, selectedRole === "organizer" ? t.setupTournament : selectedRole === "coach" ? t.startCoachAssessment : t.startPlayerAssessment, Icons.chevronRight("#fff", 18)));
   }
   return null;
 }
@@ -10261,8 +10571,7 @@ function BookCourtScreen({
     style: {
       padding: "6px 0 0",
       overflowX: "auto",
-      maxWidth: "100%",
-      WebkitOverflowScrolling: "touch"
+      maxWidth: "100%"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -10279,7 +10588,7 @@ function BookCourtScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
-      left: 300,
+      right: 14,
       top: 14,
       width: 60,
       height: 48,
@@ -10299,7 +10608,7 @@ function BookCourtScreen({
   }, t.clubhouse)), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
-      left: 300,
+      right: 14,
       top: 76,
       width: 60,
       height: 38,
@@ -10591,8 +10900,7 @@ function BookCourtScreen({
   }, /*#__PURE__*/React.createElement("div", {
     ref: stickyHeaderRef,
     style: {
-      overflow: "hidden",
-      WebkitOverflowScrolling: "touch"
+      overflow: "hidden"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -10649,7 +10957,6 @@ function BookCourtScreen({
     style: {
       overflowX: "auto",
       maxWidth: "100%",
-      WebkitOverflowScrolling: "touch",
       paddingBottom: 8
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -14767,13 +15074,16 @@ function StatsScreen({
       background: theme.cardBg,
       border: `1px solid ${theme.border}`,
       borderRadius: 12,
-      padding: 12
+      padding: 12,
+      overflowX: "auto",
+      maxWidth: "100%"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: "60px repeat(6, 1fr)",
-      gap: 3
+      gridTemplateColumns: "50px repeat(6, 1fr)",
+      gap: 3,
+      minWidth: 280
     }
   }, /*#__PURE__*/React.createElement("div", null), [`${t.court} 1`, `${t.court} 2`, `${t.court} 3`, `${t.court} 4`, `${t.court} 5`, `${t.court} 6`].map(c => /*#__PURE__*/React.createElement("div", {
     key: c,
@@ -15159,32 +15469,32 @@ function ProfileScreen({
   const [activeTab, setActiveTab] = useState(userPlan || "free");
   const planInfo = {
     free: {
-      label: "Free",
+      label: t.planFree,
       color: theme.textSecondary,
       icon: "user",
-      tagline: "For Newby",
-      desc: "Start your tennis journey"
+      tagline: t.forNewby,
+      desc: t.startJourneyFree
     },
     premium: {
-      label: "Premium",
+      label: t.planPremium,
       color: theme.primary,
       icon: "star",
-      tagline: "For Enthusiast & Solo Coach",
-      desc: "Play more, pay less, coach others"
+      tagline: t.enthusiastCoach,
+      desc: t.playMoreCoachOthers
     },
     pro: {
-      label: "Pro",
+      label: t.planPro,
       color: "#F59E0B",
       icon: "trophy",
-      tagline: "For Event, Tournament & Team Coach",
-      desc: "Organize and lead at scale"
+      tagline: t.eventTeamCoach,
+      desc: t.organizeAtScale
     },
     club: {
-      label: "Club",
+      label: t.planClub,
       color: "#E8344E",
       icon: "building",
-      tagline: "For Court Owner",
-      desc: "Full venue management suite"
+      tagline: t.forCourtOwner,
+      desc: t.fullVenueManagement
     }
   };
   const currentPlan = planInfo[userPlan] || planInfo.free;
@@ -15200,147 +15510,147 @@ function ProfileScreen({
   // Actions per plan tab
   const planActions = {
     free: [{
-      label: "Book a Court",
-      desc: "Find and reserve courts near you",
+      label: t.bookACourt,
+      desc: t.bookCourtDesc,
       icon: "calendar",
       screen: "bookVenue",
       color: theme.primary
     }, {
-      label: "Find a Match",
-      desc: "Connect with players at your level",
+      label: t.findAMatch,
+      desc: t.findMatchDesc,
       icon: "handshake",
       screen: "findMatch",
       color: "#2196F3"
     }, {
-      label: "Player Assessment",
-      desc: "Discover your NTRP / UTR / WTN rating",
+      label: t.playerAssessment,
+      desc: t.playerAssessmentDesc,
       icon: "clipboard",
       screen: "playerAssessment",
       color: theme.primary
     }, {
-      label: "Browse Group Classes",
-      desc: "Join classes led by certified coaches",
+      label: t.browseClasses,
+      desc: t.browseClassesDesc,
       icon: "users",
       screen: "browseClass",
       color: "#4CAF50"
     }, {
-      label: "View Stats",
-      desc: "Track your match history and progress",
+      label: t.viewStats,
+      desc: t.viewStatsDesc,
       icon: "activity",
       screen: "stats",
       color: "#9C27B0"
     }],
     premium: [{
-      label: "Book a Court",
-      desc: "0% commission on all bookings",
+      label: t.bookACourt,
+      desc: t.zeroCommissionDesc,
       icon: "calendar",
       screen: "bookVenue",
       color: theme.primary,
-      badge: "0% Fee"
+      badge: t.zeroFee
     }, {
-      label: "Book a Coach",
-      desc: "1-on-1 sessions with certified coaches",
+      label: t.bookACoach,
+      desc: t.bookCoachDesc,
       icon: "coach",
       screen: "findCoach",
       color: "#FF9800"
     }, {
-      label: "Create Group Class",
-      desc: "Teach up to 2 classes/month as a coach",
+      label: t.createGroupClass,
+      desc: t.createClassPremiumDesc,
       icon: "users",
       screen: "createClass",
       color: "#4CAF50",
       highlight: true
     }, {
-      label: "Player Assessment",
-      desc: "Full analytics + H2H records",
+      label: t.playerAssessment,
+      desc: t.assessmentPremiumDesc,
       icon: "clipboard",
       screen: "playerAssessment",
       color: theme.primary
     }, {
-      label: "Coach Assessment",
-      desc: "Get your coaching certification level",
+      label: t.coachAssessment,
+      desc: t.coachAssessmentDesc,
       icon: "award",
       screen: "coachAssessment",
       color: "#F59E0B"
     }, {
-      label: "Advanced Stats",
-      desc: "Serve deep-dive, opponent scouting",
+      label: t.advancedStats,
+      desc: t.advancedStatsDesc,
       icon: "activity",
       screen: "stats",
       color: "#9C27B0"
     }],
     pro: [{
-      label: "Create Tournament",
-      desc: "Unlimited tournaments, any size",
+      label: t.createTournament,
+      desc: t.createTournamentProDesc,
       icon: "trophy",
       screen: "createTournament",
       color: "#F59E0B"
     }, {
-      label: "Create League",
-      desc: "Season-long competition tracking",
+      label: t.createLeague,
+      desc: t.createLeagueDesc,
       icon: "award",
       screen: "createLeague",
       color: "#9C27B0"
     }, {
-      label: "Create Event",
-      desc: "Clinics, socials, mixers — unlimited",
+      label: t.createEvent,
+      desc: t.createEventDesc,
       icon: "star",
       screen: "createEvent",
       color: "#2196F3"
     }, {
-      label: "Create Group Class",
-      desc: "Unlimited classes as team coach",
+      label: t.createGroupClass,
+      desc: t.createClassProDesc,
       icon: "users",
       screen: "createClass",
       color: "#4CAF50",
       highlight: true
     }, {
-      label: "Organizer Assessment",
-      desc: "OQS 1.0–5.0 certification score",
+      label: t.organizerAssessment,
+      desc: t.organizerAssessmentDesc,
       icon: "clipboard",
       screen: "organizerAssessment",
       color: "#7B1FA2"
     }, {
-      label: "Player Engagement",
-      desc: "Engagement metrics + CSV export",
+      label: t.playerEngagement,
+      desc: t.playerEngagementDesc,
       icon: "activity",
       screen: "stats",
       color: theme.primary
     }],
     club: [{
-      label: "Manage Courts",
-      desc: "Court heatmap + availability dashboard",
+      label: t.manageCourts,
+      desc: t.manageCourtsDesc,
       icon: "grid",
       screen: "courtOwnerReg",
       color: "#E8344E"
     }, {
-      label: "Create Group Class",
-      desc: "Unlimited classes across your venue",
+      label: t.createGroupClass,
+      desc: t.createClassClubDesc,
       icon: "users",
       screen: "createClass",
       color: "#4CAF50",
       highlight: true
     }, {
-      label: "Create Tournament",
-      desc: "Host events at your venue",
+      label: t.createTournament,
+      desc: t.createTournamentClubDesc,
       icon: "trophy",
       screen: "createTournament",
       color: "#F59E0B"
     }, {
-      label: "Club Assessment",
-      desc: "CQS 1.0–5.0 + Tennis AU tier",
+      label: t.clubAssessment,
+      desc: t.clubAssessmentDesc,
       icon: "building",
       screen: "clubAssessment",
       color: "#E65100"
     }, {
-      label: "Member CRM",
-      desc: "Track members, churn prediction",
+      label: t.memberCRM,
+      desc: t.memberCRMDesc,
       icon: "users",
       screen: "stats",
       color: "#E8344E"
     }, {
-      label: "Revenue Reports",
-      desc: "Income analytics + forecasting",
+      label: t.revenueReports,
+      desc: t.revenueReportsDesc,
       icon: "dollar",
       screen: "stats",
       color: "#2E7D32"
@@ -15378,7 +15688,7 @@ function ProfileScreen({
       fontWeight: 700,
       color: "#fff"
     }
-  }, currentPlan.label, " Plan")), /*#__PURE__*/React.createElement("div", {
+  }, currentPlan.label, " ", t.planLabel)), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
       width: 68,
@@ -15420,7 +15730,7 @@ function ProfileScreen({
       color: "rgba(255,255,255,0.5)",
       margin: "0 0 10px"
     }
-  }, "Member since Jan 2025 \xB7 42 matches played"), /*#__PURE__*/React.createElement("div", {
+  }, t.memberSince, " Jan 2025 \xB7 42 ", t.matchesPlayed), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 8,
@@ -15551,7 +15861,7 @@ function ProfileScreen({
       fontWeight: 700,
       cursor: "pointer"
     }
-  }, "Upgrade"), userPlan === activeTab && /*#__PURE__*/React.createElement("span", {
+  }, t.upgrade), userPlan === activeTab && /*#__PURE__*/React.createElement("span", {
     style: {
       padding: "5px 10px",
       background: tabPlan.color + "18",
@@ -15628,7 +15938,7 @@ function ProfileScreen({
       padding: "2px 6px",
       borderRadius: 4
     }
-  }, "NEW")), /*#__PURE__*/React.createElement("div", {
+  }, t.newBadge)), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 11,
       color: theme.textSecondary,
@@ -15675,7 +15985,7 @@ function ProfileScreen({
       letterSpacing: 0.5
     }
   }, t.account), [{
-    label: "Edit Profile",
+    label: t.editProfile,
     icon: "edit",
     screen: null
   }, {
@@ -15683,11 +15993,11 @@ function ProfileScreen({
     icon: "users",
     screen: "roleSelect"
   }, {
-    label: "Payment Methods",
+    label: t.paymentMethods,
     icon: "creditCard",
     screen: null
   }, {
-    label: "Notifications",
+    label: t.notifications2,
     icon: "bell",
     screen: null
   }].map((item, i) => /*#__PURE__*/React.createElement("button", {
@@ -15737,8 +16047,8 @@ function ProfileScreen({
       letterSpacing: 0.5
     }
   }, t.preferences), [{
-    label: "Theme",
-    value: "Grand Slam themes",
+    label: t.theme,
+    value: t.grandSlamThemes,
     icon: "palette"
   }, {
     label: t.defaultVenue,
@@ -15901,7 +16211,7 @@ function ProfileScreen({
       gap: 6
     },
     "aria-label": "Log Out"
-  }, Icons.logOut("#E53E3E", 15), " Log Out"));
+  }, Icons.logOut("#E53E3E", 15), " ", t.logOut));
 }
 
 // ────────────────────────────────────────────────────────────────────────
@@ -22508,8 +22818,7 @@ function ClassDetailScreen({
       gap: 8,
       overflowX: "auto",
       maxWidth: "100%",
-      paddingBottom: 6,
-      WebkitOverflowScrolling: "touch"
+      paddingBottom: 6
     }
   }, upcomingDates.map((d, i) => /*#__PURE__*/React.createElement("button", {
     key: i,
@@ -23662,7 +23971,9 @@ function PricingComparisonScreen({
       background: theme.surfaceAlt,
       borderRadius: 14,
       padding: 10,
-      marginBottom: 16
+      marginBottom: 16,
+      overflowX: "auto",
+      maxWidth: "100%"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
