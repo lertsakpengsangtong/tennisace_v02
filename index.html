@@ -57,7 +57,14 @@ const THEMES = {
     navBg: "#0B1F0B",
     navText: "#DFFF00",
     gradient: "linear-gradient(135deg, #1B5E20 0%, #0B1F0B 100%)",
-    ballYellow: "#DFFF00"
+    ballYellow: "#DFFF00",
+    cardCourt: "#1B5E20",
+    cardCoach: "#9E9D24",
+    cardMatch: "#2E7D32",
+    cardTournament: "#E6A817",
+    cardLeague: "#33691E",
+    cardEvent: "#689F38",
+    cardClass: "#558B2F"
   },
   usOpen: {
     name: "US Open",
@@ -76,7 +83,14 @@ const THEMES = {
     cardBg: "#FFFFFF",
     navBg: "#00529B",
     navText: "#FFFFFF",
-    gradient: "linear-gradient(135deg, #00529B 0%, #003366 100%)"
+    gradient: "linear-gradient(135deg, #00529B 0%, #003366 100%)",
+    cardCourt: "#00529B",
+    cardCoach: "#C5A44E",
+    cardMatch: "#2EAF6E",
+    cardTournament: "#E8344E",
+    cardLeague: "#1565C0",
+    cardEvent: "#7B1FA2",
+    cardClass: "#00838F"
   },
   ausOpen: {
     name: "Australian Open",
@@ -95,7 +109,14 @@ const THEMES = {
     cardBg: "#FFFFFF",
     navBg: "#0077C8",
     navText: "#FFFFFF",
-    gradient: "linear-gradient(135deg, #0077C8 0%, #00B4D8 100%)"
+    gradient: "linear-gradient(135deg, #0077C8 0%, #00B4D8 100%)",
+    cardCourt: "#0077C8",
+    cardCoach: "#D4A017",
+    cardMatch: "#00B67A",
+    cardTournament: "#FFB74D",
+    cardLeague: "#0277BD",
+    cardEvent: "#AB47BC",
+    cardClass: "#00897B"
   },
   frenchOpen: {
     name: "French Open",
@@ -114,7 +135,14 @@ const THEMES = {
     cardBg: "#FFFFFF",
     navBg: "#C1440E",
     navText: "#FFFFFF",
-    gradient: "linear-gradient(135deg, #C1440E 0%, #8B5E3C 100%)"
+    gradient: "linear-gradient(135deg, #C1440E 0%, #8B5E3C 100%)",
+    cardCourt: "#C1440E",
+    cardCoach: "#8B5E3C",
+    cardMatch: "#2E7D32",
+    cardTournament: "#E65100",
+    cardLeague: "#6D4C41",
+    cardEvent: "#AD1457",
+    cardClass: "#2E5339"
   },
   wimbledon: {
     name: "Wimbledon",
@@ -133,7 +161,14 @@ const THEMES = {
     cardBg: "#FFFFFF",
     navBg: "#00603C",
     navText: "#FFFFFF",
-    gradient: "linear-gradient(135deg, #00603C 0%, #4B286D 100%)"
+    gradient: "linear-gradient(135deg, #00603C 0%, #4B286D 100%)",
+    cardCourt: "#00603C",
+    cardCoach: "#C5A44E",
+    cardMatch: "#2E7D32",
+    cardTournament: "#F9A825",
+    cardLeague: "#4B286D",
+    cardEvent: "#00796B",
+    cardClass: "#33691E"
   }
 };
 
@@ -922,7 +957,30 @@ const T = {
     revenueReportsDesc: "Income analytics + forecasting",
     newBadge: "NEW",
     grandSlamThemes: "Grand Slam themes",
-    planLabel: "Plan"
+    planLabel: "Plan",
+    fontSize: "Font Size",
+    fontSmall: "Small",
+    fontMedium: "Medium",
+    fontLarge: "Large",
+    fontXL: "X-Large",
+    fontXXL: "XX-Large",
+    notifMatchAccepted: "accepted your match request",
+    notifCourtBooked: "Your court booking is confirmed",
+    notifTournamentStart: "Tournament starts tomorrow",
+    notifCoachSession: "Coaching session reminder",
+    notifLeagueUpdate: "League standings updated",
+    notifEventReminder: "Event starting soon",
+    notifClassEnrolled: "You're enrolled in a class",
+    notifNewChallenger: "wants to challenge you",
+    notifCourtCancelled: "Court cancelled — slot available",
+    notifTournamentResult: "Match result posted",
+    markAllRead: "Mark all read",
+    justNow: "Just now",
+    minutesAgo: "m ago",
+    today: "Today",
+    earlier: "Earlier",
+    viewAll: "View All",
+    noNotifications: "You're all caught up!"
   },
   th: {
     locale: "th",
@@ -1589,7 +1647,30 @@ const T = {
     revenueReportsDesc: "วิเคราะห์รายได้ + พยากรณ์",
     newBadge: "ใหม่",
     grandSlamThemes: "ธีม Grand Slam",
-    planLabel: "แพลน"
+    planLabel: "แพลน",
+    fontSize: "ขนาดตัวอักษร",
+    fontSmall: "เล็ก",
+    fontMedium: "กลาง",
+    fontLarge: "ใหญ่",
+    fontXL: "ใหญ่มาก",
+    fontXXL: "ใหญ่สุด",
+    notifMatchAccepted: "ตอบรับคำท้าแข่งของคุณ",
+    notifCourtBooked: "การจองสนามได้รับการยืนยัน",
+    notifTournamentStart: "ทัวร์นาเมนต์เริ่มพรุ่งนี้",
+    notifCoachSession: "แจ้งเตือนคลาสโค้ช",
+    notifLeagueUpdate: "อัปเดตตารางคะแนนลีก",
+    notifEventReminder: "กิจกรรมกำลังจะเริ่มเร็วๆ นี้",
+    notifClassEnrolled: "คุณลงทะเบียนคลาสแล้ว",
+    notifNewChallenger: "ต้องการท้าแข่งคุณ",
+    notifCourtCancelled: "สนามถูกยกเลิก — สล็อตว่าง",
+    notifTournamentResult: "ผลการแข่งขันถูกโพสต์",
+    markAllRead: "อ่านทั้งหมดแล้ว",
+    justNow: "เมื่อสักครู่",
+    minutesAgo: "นาทีที่แล้ว",
+    today: "วันนี้",
+    earlier: "ก่อนหน้า",
+    viewAll: "ดูทั้งหมด",
+    noNotifications: "ไม่มีการแจ้งเตือนใหม่!"
   },
   zh: {
     locale: "zh-CN",
@@ -2256,7 +2337,30 @@ const T = {
     revenueReportsDesc: "收入分析 + 预测",
     newBadge: "新",
     grandSlamThemes: "大满贯主题",
-    planLabel: "计划"
+    planLabel: "计划",
+    fontSize: "字体大小",
+    fontSmall: "小",
+    fontMedium: "中",
+    fontLarge: "大",
+    fontXL: "特大",
+    fontXXL: "超大",
+    notifMatchAccepted: "接受了你的比赛请求",
+    notifCourtBooked: "场地预订已确认",
+    notifTournamentStart: "锦标赛明天开始",
+    notifCoachSession: "教练课程提醒",
+    notifLeagueUpdate: "联赛排名已更新",
+    notifEventReminder: "活动即将开始",
+    notifClassEnrolled: "你已报名参加课程",
+    notifNewChallenger: "想要挑战你",
+    notifCourtCancelled: "场地已取消 — 空位可用",
+    notifTournamentResult: "比赛结果已发布",
+    markAllRead: "全部标为已读",
+    justNow: "刚刚",
+    minutesAgo: "分钟前",
+    today: "今天",
+    earlier: "之前",
+    viewAll: "查看全部",
+    noNotifications: "没有新通知！"
   },
   ja: {
     locale: "ja",
@@ -2923,7 +3027,30 @@ const T = {
     revenueReportsDesc: "収益分析 + 予測",
     newBadge: "新規",
     grandSlamThemes: "グランドスラムテーマ",
-    planLabel: "プラン"
+    planLabel: "プラン",
+    fontSize: "文字サイズ",
+    fontSmall: "小",
+    fontMedium: "中",
+    fontLarge: "大",
+    fontXL: "特大",
+    fontXXL: "最大",
+    notifMatchAccepted: "があなたの対戦リクエストを承諾しました",
+    notifCourtBooked: "コート予約が確認されました",
+    notifTournamentStart: "トーナメントが明日開始",
+    notifCoachSession: "コーチセッションのリマインダー",
+    notifLeagueUpdate: "リーグ順位が更新されました",
+    notifEventReminder: "イベントがまもなく開始",
+    notifClassEnrolled: "クラスに登録されました",
+    notifNewChallenger: "があなたに挑戦したがっています",
+    notifCourtCancelled: "コートがキャンセル — 空き枠あり",
+    notifTournamentResult: "試合結果が投稿されました",
+    markAllRead: "すべて既読",
+    justNow: "たった今",
+    minutesAgo: "分前",
+    today: "今日",
+    earlier: "以前",
+    viewAll: "すべて表示",
+    noNotifications: "新しい通知はありません！"
   },
   fr: {
     locale: "fr",
@@ -3590,7 +3717,30 @@ const T = {
     revenueReportsDesc: "Analyses de revenus + prévisions",
     newBadge: "NOUVEAU",
     grandSlamThemes: "Thèmes Grand Slam",
-    planLabel: "Plan"
+    planLabel: "Plan",
+    fontSize: "Taille de police",
+    fontSmall: "Petit",
+    fontMedium: "Moyen",
+    fontLarge: "Grand",
+    fontXL: "Très grand",
+    fontXXL: "Maximum",
+    notifMatchAccepted: "a accepté votre demande de match",
+    notifCourtBooked: "Votre réservation de terrain est confirmée",
+    notifTournamentStart: "Le tournoi commence demain",
+    notifCoachSession: "Rappel de session de coaching",
+    notifLeagueUpdate: "Classement de la ligue mis à jour",
+    notifEventReminder: "L'événement commence bientôt",
+    notifClassEnrolled: "Vous êtes inscrit à un cours",
+    notifNewChallenger: "veut vous défier",
+    notifCourtCancelled: "Terrain annulé — créneau disponible",
+    notifTournamentResult: "Résultat du match publié",
+    markAllRead: "Tout marquer comme lu",
+    justNow: "À l'instant",
+    minutesAgo: "min",
+    today: "Aujourd'hui",
+    earlier: "Plus tôt",
+    viewAll: "Tout voir",
+    noNotifications: "Vous êtes à jour !"
   },
   es: {
     locale: "es",
@@ -4257,7 +4407,30 @@ const T = {
     revenueReportsDesc: "Análisis de ingresos + pronósticos",
     newBadge: "NUEVO",
     grandSlamThemes: "Temas Grand Slam",
-    planLabel: "Plan"
+    planLabel: "Plan",
+    fontSize: "Tamaño de fuente",
+    fontSmall: "Pequeño",
+    fontMedium: "Mediano",
+    fontLarge: "Grande",
+    fontXL: "Muy grande",
+    fontXXL: "Máximo",
+    notifMatchAccepted: "aceptó tu solicitud de partido",
+    notifCourtBooked: "Tu reserva de cancha está confirmada",
+    notifTournamentStart: "El torneo comienza mañana",
+    notifCoachSession: "Recordatorio de sesión con entrenador",
+    notifLeagueUpdate: "Clasificación de la liga actualizada",
+    notifEventReminder: "El evento comienza pronto",
+    notifClassEnrolled: "Estás inscrito en una clase",
+    notifNewChallenger: "quiere desafiarte",
+    notifCourtCancelled: "Cancha cancelada — horario disponible",
+    notifTournamentResult: "Resultado del partido publicado",
+    markAllRead: "Marcar todo como leído",
+    justNow: "Ahora",
+    minutesAgo: "min",
+    today: "Hoy",
+    earlier: "Antes",
+    viewAll: "Ver todo",
+    noNotifications: "¡Estás al día!"
   }
 };
 
@@ -6553,7 +6726,16 @@ function TennisAce() {
   const [userPlan, setUserPlan] = useState("free"); // "free" | "premium" | "pro" | "club"
   const [lang, setLang] = useState("en");
   const [showLangPicker, setShowLangPicker] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
+  const [fontScale, setFontScale] = useState("medium");
+  const FONT_ZOOM = {
+    small: 1.0,
+    medium: 1.1,
+    large: 1.22,
+    xl: 1.35,
+    xxl: 1.5
+  };
   const t = T[lang] || T.en;
   const theme = THEMES[themeKey];
   const mainTabs = [{
@@ -6737,7 +6919,9 @@ function TennisAce() {
       userPlan: userPlan,
       lang: lang,
       setLang: setLang,
-      t: t
+      t: t,
+      fontScale: fontScale,
+      setFontScale: setFontScale
     }),
     myBookings: /*#__PURE__*/React.createElement(MyBookingsScreen, {
       theme: theme,
@@ -6850,7 +7034,9 @@ function TennisAce() {
       overflow: "hidden",
       position: "relative",
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
+      zoom: FONT_ZOOM[fontScale],
+      fontSize: 16
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -7025,8 +7211,16 @@ function TennisAce() {
       fontSize: 11,
       color: theme.textSecondary
     }
-  }, lo.name), lang === lo.code && Icons.check(theme.primary, 12))))), /*#__PURE__*/React.createElement("button", {
-    onClick: () => alert("No new notifications"),
+  }, lo.name), lang === lo.code && Icons.check(theme.primary, 12))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(!showNotifications);
+      setShowThemePicker(false);
+      setShowLangPicker(false);
+    },
     style: {
       background: "none",
       border: "none",
@@ -7045,7 +7239,7 @@ function TennisAce() {
       borderRadius: 4,
       background: "#E8344E"
     }
-  })), /*#__PURE__*/React.createElement("button", {
+  }))), /*#__PURE__*/React.createElement("button", {
     onClick: () => navigate("profile"),
     style: {
       background: "rgba(255,255,255,0.2)",
@@ -7066,7 +7260,767 @@ function TennisAce() {
       fontSize: 12,
       fontWeight: 800
     }
-  }, "P")))), showThemePicker && /*#__PURE__*/React.createElement("div", {
+  }, "P")))), showNotifications && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: 52,
+      right: 12,
+      left: 12,
+      zIndex: 200,
+      background: theme.cardBg,
+      borderRadius: 14,
+      boxShadow: "0 12px 40px rgba(0,0,0,0.22)",
+      border: `1px solid ${theme.border}`,
+      overflow: "hidden",
+      maxHeight: "75vh",
+      display: "flex",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "14px 16px 10px",
+      borderBottom: `1px solid ${theme.border}`
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 8
+    }
+  }, Icons.bell(theme.primary, 18), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 16,
+      fontWeight: 700,
+      color: theme.text
+    }
+  }, t.notifications2), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10,
+      fontWeight: 700,
+      background: "#E8344E",
+      color: "#fff",
+      padding: "2px 7px",
+      borderRadius: 10
+    }
+  }, "8")), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {},
+    style: {
+      background: "none",
+      border: "none",
+      cursor: "pointer",
+      fontSize: 11,
+      fontWeight: 600,
+      color: theme.primary
+    }
+  }, t.markAllRead)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflowY: "auto",
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "8px 16px 4px",
+      fontSize: 10,
+      fontWeight: 700,
+      color: theme.textSecondary,
+      textTransform: "uppercase",
+      letterSpacing: 0.5
+    }
+  }, t.today), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("findMatch");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: theme.primaryLight + "60",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(Avatar, {
+    src: AVATARS.alex,
+    name: "Alex R.",
+    size: 38,
+    border: true,
+    borderColor: theme.cardBg
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: -2,
+      right: -2,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      background: theme.cardMatch,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.handshake("#fff", 10))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.text,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Alex R."), " ", t.notifMatchAccepted), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Singles \xB7 NTRP 4.0 \xB7 Sat 2:00 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.primary,
+      fontWeight: 600,
+      marginTop: 3
+    }
+  }, t.justNow)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: theme.primary,
+      flexShrink: 0,
+      marginTop: 6
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("myBookings");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: theme.primaryLight + "60",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.cardCourt + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.calendar(theme.cardCourt, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.text,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, t.notifCourtBooked)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Court 1 \u2014 Sunrise Tennis \xB7 Wed 6:00 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.primary,
+      fontWeight: 600,
+      marginTop: 3
+    }
+  }, "5 ", t.minutesAgo)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: theme.primary,
+      flexShrink: 0,
+      marginTop: 6
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("findCoach");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: theme.primaryLight + "60",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(Avatar, {
+    src: AVATARS.priya,
+    name: "Coach Priya",
+    size: 38,
+    border: true,
+    borderColor: theme.cardBg
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: -2,
+      right: -2,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      background: theme.cardCoach,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.coach("#fff", 10))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.text,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, t.notifCoachSession)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Coach Priya \xB7 Forehand Drill \xB7 Thu 4:00 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.primary,
+      fontWeight: 600,
+      marginTop: 3
+    }
+  }, "12 ", t.minutesAgo)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: theme.primary,
+      flexShrink: 0,
+      marginTop: 6
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("tournamentBrowse");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: theme.primaryLight + "60",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.cardTournament + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.trophy(theme.cardTournament, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.text,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, t.notifTournamentStart)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Summer Slam Open \u2014 Round 2 \xB7 Mon 5:00 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.primary,
+      fontWeight: 600,
+      marginTop: 3
+    }
+  }, "30 ", t.minutesAgo)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: theme.primary,
+      flexShrink: 0,
+      marginTop: 6
+    }
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("findMatch");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: theme.primaryLight + "60",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(Avatar, {
+    src: AVATARS.chris,
+    name: "Chris T.",
+    size: 38,
+    border: true,
+    borderColor: theme.cardBg
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: -2,
+      right: -2,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      background: theme.cardMatch,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.handshake("#fff", 10))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.text,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", null, "Chris T."), " ", t.notifNewChallenger), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Doubles \xB7 NTRP 3.5 \xB7 Sun 9:00 AM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.primary,
+      fontWeight: 600,
+      marginTop: 3
+    }
+  }, "1h")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: theme.primary,
+      flexShrink: 0,
+      marginTop: 6
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "10px 16px 4px",
+      fontSize: 10,
+      fontWeight: 700,
+      color: theme.textSecondary,
+      textTransform: "uppercase",
+      letterSpacing: 0.5
+    }
+  }, t.earlier), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("tournamentBrowse");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.cardLeague + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.activity(theme.cardLeague, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.textSecondary,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: theme.text
+    }
+  }, t.notifLeagueUpdate)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Monday Night League \xB7 #3 \xB7 5W-2L"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.textSecondary,
+      marginTop: 3
+    }
+  }, "2h"))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("eventBrowse");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.cardEvent + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.star(theme.cardEvent, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.textSecondary,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: theme.text
+    }
+  }, t.notifEventReminder)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Friday Night Social \xB7 Riverside Courts \xB7 6:30 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.textSecondary,
+      marginTop: 3
+    }
+  }, "5h"))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("browseClass");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(Avatar, {
+    src: AVATARS.chen,
+    name: "Coach Chen",
+    size: 38,
+    border: true,
+    borderColor: theme.cardBg
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: -2,
+      right: -2,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      background: theme.cardClass,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.users("#fff", 10))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.textSecondary,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: theme.text
+    }
+  }, t.notifClassEnrolled)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Beginner Doubles Bootcamp \xB7 Coach Chen \xB7 Sat 9 AM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.textSecondary,
+      marginTop: 3
+    }
+  }, "1d"))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("bookVenue");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}30`,
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.error + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.calendar(theme.error, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.textSecondary,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: theme.text
+    }
+  }, t.notifCourtCancelled)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "Court 2 \u2014 Central Sports \xB7 Thu 7:00 PM"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.textSecondary,
+      marginTop: 3
+    }
+  }, "1d"))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      setShowNotifications(false);
+      navigate("tournamentBrowse");
+    },
+    style: {
+      display: "flex",
+      gap: 10,
+      padding: "10px 16px",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      cursor: "pointer",
+      textAlign: "left",
+      alignItems: "flex-start"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 38,
+      height: 38,
+      borderRadius: 19,
+      background: theme.cardTournament + "20",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, Icons.trophy(theme.cardTournament, 18))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: theme.textSecondary,
+      lineHeight: 1.35
+    }
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: theme.text
+    }
+  }, t.notifTournamentResult)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: theme.textSecondary,
+      marginTop: 2
+    }
+  }, "You won vs. Maria L. \u2014 6-4, 7-5"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      color: theme.textSecondary,
+      marginTop: 3
+    }
+  }, "2d")))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderTop: `1px solid ${theme.border}`,
+      padding: "10px 16px",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setShowNotifications(false),
+    style: {
+      background: "none",
+      border: "none",
+      cursor: "pointer",
+      fontSize: 13,
+      fontWeight: 600,
+      color: theme.primary
+    }
+  }, t.viewAll, " ", t.notifications2))), showNotifications && /*#__PURE__*/React.createElement("div", {
+    onClick: () => setShowNotifications(false),
+    style: {
+      position: "absolute",
+      top: 52,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 199,
+      background: "transparent"
+    }
+  }), showThemePicker && /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       top: 52,
@@ -7233,37 +8187,37 @@ function HomeScreen({
     id: "court",
     label: t.court,
     icon: "calendar",
-    color: theme.primary
+    color: theme.cardCourt
   }, {
     id: "coach",
     label: t.coach,
     icon: "coach",
-    color: theme.accent
+    color: theme.cardCoach
   }, {
     id: "match",
     label: t.match,
     icon: "handshake",
-    color: theme.success
+    color: theme.cardMatch
   }, {
     id: "tournament",
     label: t.tournament,
     icon: "trophy",
-    color: theme.warning || "#F5A623"
+    color: theme.cardTournament
   }, {
     id: "league",
     label: t.league,
     icon: "activity",
-    color: theme.success
+    color: theme.cardLeague
   }, {
     id: "event",
     label: t.event,
     icon: "star",
-    color: "#9B59B6"
+    color: theme.cardEvent
   }, {
     id: "class",
     label: t.groupClass,
     icon: "users",
-    color: "#00838F"
+    color: theme.cardClass
   }];
 
   // ── Feed Items (unified, Facebook-style) ──
@@ -7271,7 +8225,7 @@ function HomeScreen({
     id: 1,
     type: "court",
     icon: "calendar",
-    color: theme.primary,
+    color: theme.cardCourt,
     user: "You",
     avatarKey: "pete",
     action: `${t.bookedCourt} Court 1`,
@@ -7289,7 +8243,7 @@ function HomeScreen({
     id: 2,
     type: "coach",
     icon: "coach",
-    color: theme.accent,
+    color: theme.cardCoach,
     user: "Coach Priya",
     avatarKey: "priya",
     action: t.confirmedSession,
@@ -7307,7 +8261,7 @@ function HomeScreen({
     id: 3,
     type: "match",
     icon: "handshake",
-    color: theme.success,
+    color: theme.cardMatch,
     user: "Alex R.",
     avatarKey: "alex",
     action: t.acceptedMatch,
@@ -7325,7 +8279,7 @@ function HomeScreen({
     id: 4,
     type: "court",
     icon: "calendar",
-    color: theme.primary,
+    color: theme.cardCourt,
     user: "You",
     avatarKey: "pete",
     action: `${t.bookedCourt} Court 3`,
@@ -7343,7 +8297,7 @@ function HomeScreen({
     id: 5,
     type: "tournament",
     icon: "trophy",
-    color: theme.warning || "#F5A623",
+    color: theme.cardTournament,
     user: "Summer Slam Open",
     avatarKey: "federer",
     action: t.roundDrawLive,
@@ -7361,7 +8315,7 @@ function HomeScreen({
     id: 6,
     type: "match",
     icon: "handshake",
-    color: theme.success,
+    color: theme.cardMatch,
     user: "You",
     avatarKey: "pete",
     action: t.createdDoubles,
@@ -7379,7 +8333,7 @@ function HomeScreen({
     id: 7,
     type: "league",
     icon: "activity",
-    color: theme.success,
+    color: theme.cardLeague,
     user: "Monday Night League",
     avatarKey: "murray",
     action: t.standingsUpdated,
@@ -7397,7 +8351,7 @@ function HomeScreen({
     id: 8,
     type: "event",
     icon: "star",
-    color: "#9B59B6",
+    color: theme.cardEvent,
     user: "Riverside Courts",
     avatarKey: "sarah",
     action: t.hostingEvent,
@@ -7415,7 +8369,7 @@ function HomeScreen({
     id: 9,
     type: "coach",
     icon: "coach",
-    color: theme.accent,
+    color: theme.cardCoach,
     user: "Coach Chen",
     avatarKey: "chen",
     action: t.postedClinic,
@@ -7433,7 +8387,7 @@ function HomeScreen({
     id: 10,
     type: "event",
     icon: "star",
-    color: "#9B59B6",
+    color: theme.cardEvent,
     user: "Thai Tennis Assoc.",
     avatarKey: "nadal",
     action: t.announcedEvent,
@@ -7451,7 +8405,7 @@ function HomeScreen({
     id: 11,
     type: "tournament",
     icon: "trophy",
-    color: theme.warning || "#F5A623",
+    color: theme.cardTournament,
     user: "Doubles Classic",
     avatarKey: "alcaraz",
     action: t.registrationOpen,
@@ -7469,7 +8423,7 @@ function HomeScreen({
     id: 12,
     type: "class",
     icon: "users",
-    color: "#00838F",
+    color: theme.cardClass,
     user: "Coach Chen",
     avatarKey: "chen",
     action: t.postedClass,
@@ -7477,7 +8431,7 @@ function HomeScreen({
     detail: `${t.groupClass} · 6/10 ${t.spotsLeft} · ${t.beginners}`,
     time: `${t.everySaturday} · 9:00 AM`,
     status: t.enrolling,
-    statusColor: "#00838F",
+    statusColor: theme.cardClass,
     timeAgo: `4${t.hoursAgo}`,
     screen: "browseClass",
     venue: "Le Smash Tennis",
@@ -7487,7 +8441,7 @@ function HomeScreen({
     id: 13,
     type: "class",
     icon: "users",
-    color: "#00838F",
+    color: theme.cardClass,
     user: "Coach Priya",
     avatarKey: "priya",
     action: t.upcomingClassTomorrow,
@@ -10126,17 +11080,17 @@ function BookVenueScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "7px 14px",
-      background: theme.primary + "10",
+      background: theme.cardCourt + "10",
       display: "flex",
       alignItems: "center",
       gap: 6,
-      borderBottom: `1px solid ${theme.primary}20`
+      borderBottom: `1px solid ${theme.cardCourt}20`
     }
-  }, Icons.calendar(theme.primary, 13), /*#__PURE__*/React.createElement("span", {
+  }, Icons.calendar(theme.cardCourt, 13), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       fontWeight: 700,
-      color: theme.primary
+      color: theme.cardCourt
     }
   }, t.court)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -13374,17 +14328,17 @@ function FindMatchScreen({
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         padding: "7px 14px",
-        background: theme.success + "10",
+        background: theme.cardMatch + "10",
         display: "flex",
         alignItems: "center",
         gap: 6,
-        borderBottom: `1px solid ${theme.success}20`
+        borderBottom: `1px solid ${theme.cardMatch}20`
       }
-    }, Icons.handshake(theme.success, 13), /*#__PURE__*/React.createElement("span", {
+    }, Icons.handshake(theme.cardMatch, 13), /*#__PURE__*/React.createElement("span", {
       style: {
         fontSize: 11,
         fontWeight: 700,
-        color: theme.success
+        color: theme.cardMatch
       }
     }, t.match)), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -15464,7 +16418,9 @@ function ProfileScreen({
   userPlan,
   lang,
   setLang,
-  t
+  t,
+  fontScale,
+  setFontScale
 }) {
   const [activeTab, setActiveTab] = useState(userPlan || "free");
   const planInfo = {
@@ -16151,6 +17107,69 @@ function ProfileScreen({
       textTransform: "uppercase",
       letterSpacing: 0.5
     }
+  }, t.fontSize), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8
+    }
+  }, [{
+    id: "small",
+    label: t.fontSmall,
+    sample: 12
+  }, {
+    id: "medium",
+    label: t.fontMedium,
+    sample: 15
+  }, {
+    id: "large",
+    label: t.fontLarge,
+    sample: 18
+  }, {
+    id: "xl",
+    label: t.fontXL,
+    sample: 21
+  }, {
+    id: "xxl",
+    label: t.fontXXL,
+    sample: 24
+  }].map(opt => /*#__PURE__*/React.createElement("button", {
+    key: opt.id,
+    onClick: () => setFontScale(opt.id),
+    style: {
+      flex: 1,
+      padding: "12px 8px",
+      background: fontScale === opt.id ? theme.primary : theme.cardBg,
+      border: `2px solid ${fontScale === opt.id ? theme.primary : theme.border}`,
+      borderRadius: 10,
+      cursor: "pointer",
+      textAlign: "center",
+      color: fontScale === opt.id ? "#fff" : theme.text,
+      transition: "all 0.2s"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: opt.sample,
+      fontWeight: 700,
+      marginBottom: 4
+    }
+  }, "Aa"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontWeight: 600
+    }
+  }, opt.label))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 12,
+      fontWeight: 700,
+      color: theme.textSecondary,
+      margin: "0 0 10px",
+      textTransform: "uppercase",
+      letterSpacing: 0.5
+    }
   }, t.app), [{
     label: t.helpSupport,
     icon: "helpCircle"
@@ -16705,7 +17724,7 @@ function TournamentBrowseScreen({
     [t.singles]: theme.primary,
     [t.doubles]: theme.success,
     [t.juniors]: theme.warning,
-    [t.social]: "#9B59B6"
+    [t.social]: theme.cardEvent
   };
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -16832,17 +17851,17 @@ function TournamentBrowseScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "7px 14px",
-      background: (theme.warning || "#F5A623") + "10",
+      background: theme.cardTournament + "10",
       display: "flex",
       alignItems: "center",
       gap: 6,
-      borderBottom: `1px solid ${theme.warning || "#F5A623"}20`
+      borderBottom: `1px solid ${theme.cardTournament}20`
     }
-  }, Icons.trophy(theme.warning || "#F5A623", 13), /*#__PURE__*/React.createElement("span", {
+  }, Icons.trophy(theme.cardTournament, 13), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       fontWeight: 700,
-      color: theme.warning || "#F5A623"
+      color: theme.cardTournament
     }
   }, t.tournament)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -17070,17 +18089,17 @@ function TournamentBrowseScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "7px 14px",
-      background: "#1565C0" + "10",
+      background: theme.cardLeague + "10",
       display: "flex",
       alignItems: "center",
       gap: 6,
-      borderBottom: "1px solid #1565C020"
+      borderBottom: `1px solid ${theme.cardLeague}20`
     }
-  }, Icons.activity("#1565C0", 13), /*#__PURE__*/React.createElement("span", {
+  }, Icons.activity(theme.cardLeague, 13), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       fontWeight: 700,
-      color: "#1565C0"
+      color: theme.cardLeague
     }
   }, t.league)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -18674,17 +19693,17 @@ function FindCoachScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "7px 14px",
-      background: theme.accent + "10",
+      background: theme.cardCoach + "10",
       display: "flex",
       alignItems: "center",
       gap: 6,
-      borderBottom: `1px solid ${theme.accent}20`
+      borderBottom: `1px solid ${theme.cardCoach}20`
     }
-  }, Icons.coach(theme.accent, 13), /*#__PURE__*/React.createElement("span", {
+  }, Icons.coach(theme.cardCoach, 13), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       fontWeight: 700,
-      color: theme.accent
+      color: theme.cardCoach
     }
   }, t.coach), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -19556,7 +20575,7 @@ function EventBrowseScreen({
   const typeColors = {
     "Social Meetup": theme.success,
     "Tennis Clinic": theme.primary,
-    "Player Mixer": "#9B59B6",
+    "Player Mixer": theme.cardEvent,
     "Workshop": theme.accent || "#E67E22",
     "Charity Event": "#E8344E"
   };
@@ -19572,7 +20591,7 @@ function EventBrowseScreen({
       gap: 10,
       marginBottom: 10
     }
-  }, Icons.star("#9B59B6", 26), /*#__PURE__*/React.createElement("h2", {
+  }, Icons.star(theme.cardEvent, 26), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontSize: 22,
       fontWeight: 700,
@@ -19586,7 +20605,7 @@ function EventBrowseScreen({
       width: "100%",
       padding: "12px 0",
       marginBottom: 14,
-      background: "#9B59B6",
+      background: theme.cardEvent,
       border: "none",
       borderRadius: 10,
       cursor: "pointer",
@@ -19633,7 +20652,7 @@ function EventBrowseScreen({
     onClick: () => setTab(et.key),
     style: {
       padding: "8px 14px",
-      background: tab === et.key ? "#9B59B6" : theme.cardBg,
+      background: tab === et.key ? theme.cardEvent : theme.cardBg,
       color: tab === et.key ? "#fff" : theme.text,
       border: `1px solid ${tab === et.key ? "transparent" : theme.border}`,
       borderRadius: 8,
@@ -19655,17 +20674,17 @@ function EventBrowseScreen({
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "7px 14px",
-      background: "#9B59B6" + "10",
+      background: theme.cardEvent + "10",
       display: "flex",
       alignItems: "center",
       gap: 6,
-      borderBottom: "1px solid #9B59B620"
+      borderBottom: `1px solid ${theme.cardEvent}20`
     }
-  }, Icons.star("#9B59B6", 13), /*#__PURE__*/React.createElement("span", {
+  }, Icons.star(theme.cardEvent, 13), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       fontWeight: 700,
-      color: "#9B59B6"
+      color: theme.cardEvent
     }
   }, t.event)), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -19680,7 +20699,7 @@ function EventBrowseScreen({
       fontSize: 10,
       padding: "3px 8px",
       borderRadius: 6,
-      background: typeColors[ev.type] || "#9B59B6",
+      background: typeColors[ev.type] || theme.cardEvent,
       color: "#fff",
       fontWeight: 700
     }
@@ -19762,7 +20781,7 @@ function EventBrowseScreen({
     onClick: () => navigate("bookConfirm"),
     style: {
       padding: "8px 16px",
-      background: "#9B59B6",
+      background: theme.cardEvent,
       color: "#fff",
       border: "none",
       borderRadius: 8,
@@ -22077,17 +23096,17 @@ function BrowseClassScreen({
     }, /*#__PURE__*/React.createElement("div", {
       style: {
         padding: "7px 14px",
-        background: "#00838F" + "10",
+        background: theme.cardClass + "10",
         display: "flex",
         alignItems: "center",
         gap: 6,
-        borderBottom: "1px solid #00838F20"
+        borderBottom: `1px solid ${theme.cardClass}20`
       }
-    }, Icons.users("#00838F", 13), /*#__PURE__*/React.createElement("span", {
+    }, Icons.users(theme.cardClass, 13), /*#__PURE__*/React.createElement("span", {
       style: {
         fontSize: 11,
         fontWeight: 700,
-        color: "#00838F"
+        color: theme.cardClass
       }
     }, t.groupClass)), /*#__PURE__*/React.createElement("div", {
       style: {
